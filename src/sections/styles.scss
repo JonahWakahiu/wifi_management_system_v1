@@ -1,0 +1,220 @@
+.main {
+  display: grid;
+  max-width: 500px;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+}
+
+.card {
+  background: var(--clr-container);
+  padding: 12px 16px;
+  border-radius: 10px;
+  position: relative;
+
+  &_title {
+    text-align: center;
+  }
+
+  &_desc {
+    text-align: center;
+  }
+  &_header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-size: 30px;
+    font-family: var(--fnf-secondary);
+    background: hsl(247, 32%, 36%);
+    line-height: 2;
+    border-radius: 10px;
+  }
+  .login_desc {
+    margin-top: 40px;
+  }
+  ol {
+    list-style-position: inside;
+    line-height: 1.6;
+  }
+}
+
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  &_deals {
+    background: var(--clr-text-white);
+    color: hsl(0, 0%, 40%);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    line-height: 1.6;
+    border: 1px solid hsl(0, 100%, 50%);
+    font-weight: var(--fnw-600);
+    font-family: var(--fnf-secondary);
+
+    h3 {
+      color: red;
+    }
+    h4 {
+      color: green;
+      margin-block: 8px;
+    }
+
+    &:hover {
+      box-shadow: 3px 3px 3px red;
+    }
+  }
+  .modal {
+    position: fixed;
+    inset: 0;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    display: grid;
+    place-items: center;
+    z-index: 100;
+
+    &_body {
+      background: var(--clr-text-white);
+      color: hsl(0, 0%, 40%);
+      border-radius: 10px;
+      max-width: 400px;
+      padding: 12px 24px;
+      text-align: center;
+
+      h3 {
+        font-size: var(--fns-normal);
+        font-weight: var(--fnw-500);
+
+        span {
+          color: var(--clr-main);
+        }
+      }
+
+      &-btn {
+        margin-top: 10px;
+        padding: 6px 16px;
+        font-size: var(--fns-medium);
+        font-family: var(--fnf-secondary);
+        font-weight: var(--fnw-700);
+        color: hsl(0, 0%, 40%);
+        border: none;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: hsl(190, 100%, 45%);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.form {
+  width: calc(100% - 20px);
+  margin-inline: auto;
+
+  h4 {
+    text-align: center;
+  }
+
+  &_control {
+    width: 100%;
+    padding: 8px 8px;
+    margin-block: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    font-size: var(--fns-normal);
+    font-family: var(--fnf-secondary);
+    color: hsl(0, 0%, 40%);
+
+    &:hover,
+    &:focus {
+      border: 1px solid var(--clr-main);
+    }
+  }
+
+  .input_div {
+    display: flex;
+    border-radius: 10px;
+    background: var(--clr-text-white);
+    padding: 6px 8px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+
+    .input_icon {
+      text-align: center;
+      color: hsl(0, 0%, 40%);
+      cursor: pointer;
+      margin-right: 10px;
+      font-size: 20px;
+      padding-top: 3px;
+    }
+
+    .form_control {
+      all: unset;
+      width: 100%;
+      color: hsl(0, 0%, 40%);
+      border-left: 1px solid hsl(0, 0%, 87%);
+      padding-inline: 8px;
+    }
+
+    &:focus-within {
+      border: 1px solid var(--clr-main);
+    }
+  }
+
+  &_btn {
+    width: 100%;
+    padding: 5px 16px;
+    border-radius: 5px;
+    font-size: var(--fns-medium);
+    font-weight: var(--fnw-700);
+    font-family: var(--fnf-secondary);
+    border: none;
+    color: hsl(0, 0%, 23%);
+    background: hsl(190, 100%, 45%);
+
+    &:hover {
+      background: hsl(190, 100%, 80%);
+    }
+  }
+
+  .btn_reconnect {
+    background-image: linear-gradient(
+      to right,
+      rgb(255, 123, 0),
+      rgb(102, 243, 9)
+    );
+
+    &:hover {
+      background-image: linear-gradient(
+        to left,
+        rgb(255, 123, 0),
+        rgb(102, 243, 9)
+      );
+    }
+  }
+  .btn_voucher,
+  .btn_pay {
+    background-image: linear-gradient(
+      to right,
+      hsl(128, 100%, 51%),
+      hsl(190, 100%, 45%)
+    );
+
+    &:hover {
+      background-image: linear-gradient(
+        to left,
+        hsl(128, 100%, 51%),
+        hsl(190, 100%, 45%)
+      );
+    }
+  }
+}
