@@ -1,6 +1,38 @@
 // Google fonts import
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap");
 
+// css variables
+// colors
+$clr-main: hsl(120, 100%, 50%);
+$clr-cyan: hsl(190, 100%, 45%);
+$clr-cyan-200: hsl(190, 100%, 80%);
+$clr-red: hsl(0, 100%, 50%);
+$clr-red-200: rgb(255, 123, 0);
+$clr-body: hsl(247, 42%, 16%);
+$clr-container: hsl(247, 42%, 30%);
+$clr-container2: hsl(247, 32%, 36%);
+$clr-text: hsl(0, 0%, 20%);
+$clr-text-white: hsl(0, 0%, 100%);
+
+// font size
+$h3-font: 30px;
+$fns-large: 24px;
+$fns-medium: 18px;
+$fns-normal: 16px;
+$fns-small: 15px;
+$fns-smaller: 14px;
+
+// font-weight
+$fnw-400: 400;
+$fnw-500: 500;
+$fnw-600: 600;
+$fnw-700: 700;
+$fnw-800: 800;
+
+// font-style
+$fnf-primary: "Open Sans", sans-serif;
+$fnf-secondary: "Poppins", sans-serif;
+
 *,
 *::before,
 *::after {
@@ -9,42 +41,15 @@
   box-sizing: border-box;
 }
 
-// css variables
-:root {
-  // colors
-  --clr-main: hsl(120, 100%, 50%);
-  --clr-body: hsl(247, 42%, 16%);
-  --clr-container: hsl(247, 42%, 30%);
-  --clr-border: hsl();
-
-  // --clr-text:
-  --clr-text-white: #fff;
-
-  // fonts-size
-  --fns-large: 24px;
-  --fns-medium: 18px;
-  --fns-normal: 16px;
-  --fns-small: 15px;
-
-  // font weight
-  --fnw-400: 400;
-  --fnw-500: 500;
-  --fnw-600: 600;
-  --fnw-700: 700;
-  --fnw-800: 800;
-
-  // font-style
-  --fnf-primary: "Open Sans", sans-serif;
-  --fnf-secondary: "Poppins", sans-serif;
-}
-
 html,
 body {
-  color: var(--clr-text-white);
-  background: var(--clr-body);
-  font-family: var(--fnf-primary);
-  font-size: var(--fns-normal);
-  font-weight: var(--fnw-500);
+  color: $clr-text-white;
+  background: $clr-body;
+  font: {
+    family: $fnf-primary;
+    size: $fns-normal;
+    weight: $fnw-500;
+  }
 }
 
 // section after the navbar
@@ -54,3 +59,40 @@ body {
   padding-top: 50px;
   margin-block: 20px;
 }
+
+.btn {
+  width: 100%;
+  padding: 5px 16px;
+  border-radius: 5px;
+  font: {
+    size: $fns-medium;
+    weight: $fnw-700;
+    family: $fnf-secondary;
+  }
+  border: none;
+  color: $clr-text;
+  background: $clr-cyan;
+
+  &:hover {
+    background: $clr-cyan-200;
+  }
+}
+
+.btn_reconnect {
+  background-image: linear-gradient(to right, $clr-red-200, $clr-main);
+
+  &:hover {
+    background-image: linear-gradient(to left, $clr-red-200, $clr-main);
+  }
+}
+.btn_voucher,
+.btn_pay {
+  background-image: linear-gradient(to right, $clr-main, $clr-cyan);
+
+  &:hover {
+    background-image: linear-gradient(to left, $clr-main, $clr-cyan);
+  }
+}
+
+@import "./components/navbar/navbar";
+@import "./sections/styles";

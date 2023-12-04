@@ -1,4 +1,3 @@
-import "./App.scss";
 import Navbar from "./components/navbar";
 import MainSection from "./sections";
 

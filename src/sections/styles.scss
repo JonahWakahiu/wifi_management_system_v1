@@ -6,18 +6,16 @@
 }
 
 .card {
-  background: var(--clr-container);
+  background: $clr-container;
   padding: 12px 16px;
   border-radius: 10px;
   position: relative;
 
-  &_title {
-    text-align: center;
-  }
-
+  &_title,
   &_desc {
     text-align: center;
   }
+
   &_header {
     position: absolute;
     top: 0;
@@ -25,10 +23,12 @@
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
-    font-style: italic;
-    font-size: 30px;
-    font-family: var(--fnf-secondary);
-    background: hsl(247, 32%, 36%);
+    font: {
+      style: italic;
+      size: $h3-font;
+      family: $fnf-secondary;
+    }
+    background: $clr-container2;
     line-height: 2;
     border-radius: 10px;
   }
@@ -47,28 +47,30 @@
   gap: 10px;
 
   &_deals {
-    background: var(--clr-text-white);
-    color: hsl(0, 0%, 40%);
+    background: $clr-text-white;
+    color: $clr-text;
     border-radius: 50%;
     aspect-ratio: 1/1;
     display: flex;
     flex-wrap: wrap;
     place-content: center;
     line-height: 1.6;
-    border: 1px solid hsl(0, 100%, 50%);
-    font-weight: var(--fnw-600);
-    font-family: var(--fnf-secondary);
+    border: 1px solid $clr-red;
+    font: {
+      weight: $fnw-600;
+      family: $fnf-secondary;
+    }
 
     h3 {
-      color: red;
+      color: $clr-red;
     }
     h4 {
-      color: green;
+      color: $clr-main;
       margin-block: 8px;
     }
 
     &:hover {
-      box-shadow: 3px 3px 3px red;
+      box-shadow: -3px 3px 3px $clr-red;
     }
   }
   .modal {
@@ -79,36 +81,27 @@
     place-items: center;
     z-index: 100;
 
+    &_btn {
+      width: fit-content;
+      margin-top: 10px;
+    }
+
     &_body {
-      background: var(--clr-text-white);
-      color: hsl(0, 0%, 40%);
+      background: $clr-text-white;
+      color: $clr-text;
       border-radius: 10px;
       max-width: 400px;
       padding: 12px 24px;
       text-align: center;
 
       h3 {
-        font-size: var(--fns-normal);
-        font-weight: var(--fnw-500);
+        font: {
+          size: $fns-normal;
+          weight: $fnw-500;
+        }
 
         span {
-          color: var(--clr-main);
-        }
-      }
-
-      &-btn {
-        margin-top: 10px;
-        padding: 6px 16px;
-        font-size: var(--fns-medium);
-        font-family: var(--fnf-secondary);
-        font-weight: var(--fnw-700);
-        color: hsl(0, 0%, 40%);
-        border: none;
-        border-radius: 5px;
-
-        &:hover {
-          background-color: hsl(190, 100%, 45%);
-          color: white;
+          color: $clr-main;
         }
       }
     }
@@ -126,31 +119,43 @@
   &_control {
     width: 100%;
     padding: 8px 8px;
-    margin-block: 10px;
+    margin-bottom: 10px;
     border: 1px solid transparent;
     border-radius: 10px;
     outline: none;
-    font-size: var(--fns-normal);
-    font-family: var(--fnf-secondary);
-    color: hsl(0, 0%, 40%);
+    font: {
+      size: $fns-normal;
+      family: $fnf-secondary;
+    }
+    color: $clr-text;
 
     &:hover,
     &:focus {
-      border: 1px solid var(--clr-main);
+      border: 1px solid $clr-main;
     }
+  }
+
+  .input-error {
+    border: 2px solid $clr-red;
+    margin-bottom: 2px;
+  }
+
+  .text_error {
+    color: $clr-red;
+    margin-bottom: 10px;
+    font-weight: $fnw-500;
   }
 
   .input_div {
     display: flex;
     border-radius: 10px;
-    background: var(--clr-text-white);
+    background: $clr-text-white;
     padding: 6px 8px;
-    margin-bottom: 10px;
-    border: 1px solid transparent;
+    border: 1px solid;
 
     .input_icon {
       text-align: center;
-      color: hsl(0, 0%, 40%);
+      color: $clr-text;
       cursor: pointer;
       margin-right: 10px;
       font-size: 20px;
@@ -160,61 +165,14 @@
     .form_control {
       all: unset;
       width: 100%;
-      color: hsl(0, 0%, 40%);
+      color: $clr-text;
       border-left: 1px solid hsl(0, 0%, 87%);
       padding-inline: 8px;
     }
 
-    &:focus-within {
-      border: 1px solid var(--clr-main);
-    }
-  }
-
-  &_btn {
-    width: 100%;
-    padding: 5px 16px;
-    border-radius: 5px;
-    font-size: var(--fns-medium);
-    font-weight: var(--fnw-700);
-    font-family: var(--fnf-secondary);
-    border: none;
-    color: hsl(0, 0%, 23%);
-    background: hsl(190, 100%, 45%);
-
+    &:focus-within,
     &:hover {
-      background: hsl(190, 100%, 80%);
-    }
-  }
-
-  .btn_reconnect {
-    background-image: linear-gradient(
-      to right,
-      rgb(255, 123, 0),
-      rgb(102, 243, 9)
-    );
-
-    &:hover {
-      background-image: linear-gradient(
-        to left,
-        rgb(255, 123, 0),
-        rgb(102, 243, 9)
-      );
-    }
-  }
-  .btn_voucher,
-  .btn_pay {
-    background-image: linear-gradient(
-      to right,
-      hsl(128, 100%, 51%),
-      hsl(190, 100%, 45%)
-    );
-
-    &:hover {
-      background-image: linear-gradient(
-        to left,
-        hsl(128, 100%, 51%),
-        hsl(190, 100%, 45%)
-      );
+      border: 1px solid $clr-main;
     }
   }
 }

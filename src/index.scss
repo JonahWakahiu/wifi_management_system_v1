@@ -1,3 +1,5 @@
+@import "./App";
+
 @media screen and (max-width: 600px) {
   .navbarColor {
     all: unset;
@@ -9,7 +11,7 @@
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    background: var(--clr-container);
+    background: $clr-container;
     margin-block: 20px;
     height: auto;
   }
@@ -23,8 +25,8 @@
   .navbar {
     max-width: calc(100% - 30px);
     &_brand {
-      font-size: var(--fns-medium);
-      font-weight: var(--fnw-600);
+      font-size: $fns-medium;
+      font-weight: $fnw-600;
     }
   }
   .main {
@@ -37,7 +39,7 @@
     h3,
     h4 {
       font-size: 14px;
-      font-weight: var(--fnw-500);
+      font-weight: $fnw-500;
     }
 
     h4 {

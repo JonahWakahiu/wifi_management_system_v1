@@ -10,18 +10,20 @@
 
   &_brand {
     display: flex;
-    font-size: var(--fns-large);
-    font-weight: var(--fnw-700);
-    font-family: var(--fnf-secondary);
+    font: {
+      size: $fns-large;
+      weight: $fnw-700;
+      family: $fnf-secondary;
+    }
 
     &-icon {
       margin-right: 10px;
       padding-top: 2px;
-      color: var(--clr-main);
+      color: $clr-main;
     }
   }
 }
 .navbarColor {
-  background: var(--clr-container);
+  background: $clr-container;
   box-shadow: 2px 2px 3px hsl(246, 42%, 14%);
 }

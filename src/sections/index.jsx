@@ -3,7 +3,7 @@ import LoginSection from "./LoginSection";
 import PackagesSection from "./PackagesSection";
 import ReconnectSection from "./ReconnectSection";
 import VoucherSection from "./VoucherSection";
-import "./styles.scss";
+// import "./styles.scss";
 
 const MainSection = () => {
   return (

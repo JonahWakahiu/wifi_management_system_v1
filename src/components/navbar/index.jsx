@@ -1,5 +1,4 @@
 import { FaWifi } from "react-icons/fa";
-import "./navbar.scss";
 import { useState } from "react";
 
 const Navbar = () => {
