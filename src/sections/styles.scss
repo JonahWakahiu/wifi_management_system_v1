@@ -16,6 +16,10 @@
     text-align: center;
   }
 
+  &_desc {
+    margin-block: 5px;
+  }
+
   &_header {
     position: absolute;
     top: 0;
@@ -32,9 +36,12 @@
     line-height: 2;
     border-radius: 10px;
   }
+
   .login_desc {
     margin-top: 40px;
+    line-height: 1.6;
   }
+
   ol {
     list-style-position: inside;
     line-height: 1.6;

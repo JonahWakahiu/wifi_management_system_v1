@@ -62,7 +62,9 @@ const PackagesSection = () => {
       >
         {({ errors, touched }) => (
           <Form className="form">
-            <h4>Tap one circle above and enter phone number to pay now</h4>
+            <h4 className="card_desc">
+              Tap one circle above and enter phone number to pay now
+            </h4>
             <Field
               className={`form_control ${
                 errors.phone_number && touched.phone_number ? "input-error" : ""

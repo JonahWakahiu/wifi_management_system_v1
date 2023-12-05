@@ -20,12 +20,15 @@ const LoginSection = () => {
         validationSchema={Yup.object().shape({
           username: Yup.string()
             .required("Required")
-            .matches(/^[a-zA-Z{3,10}] $/, "username must be 3 characters long"),
+            .matches(
+              /^[a-zA-Z]{3,}$/,
+              "username must be 3 and above characters long"
+            ),
           password: Yup.string()
             .required("Required")
             .matches(
               /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
-              "Enter a valid password"
+              "Password must have at least one letter, number, special character and 8 digits long"
             ),
         })}
       >
